@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajá con nosotros – Miguel Cordini</title>
+    <meta name="description" content="Súmate a nuestro equipo de ventas y asesoramiento técnico agrícola. Sube tu CV y ponte en contacto con Miguel Cordini.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-layout {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 40px;
+        }
+        .form-box {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius-md);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(107, 144, 62, 0.05);
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            display: block;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: var(--color-primary);
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-light);
+            outline: none;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+        }
+        .form-control:focus {
+            border-color: var(--color-accent-yellow);
+            background-color: var(--bg-white);
+            box-shadow: 0 0 0 3px rgba(230, 185, 32, 0.1);
+        }
+        .file-upload-wrapper {
+            position: relative;
+            width: 100%;
+            height: 120px;
+            border: 2px dashed var(--border-organic);
+            border-radius: var(--border-radius-sm);
+            background-color: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+        .file-upload-wrapper:hover {
+            border-color: var(--color-accent-yellow);
+            background-color: var(--bg-white);
+        }
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .file-upload-label {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .file-upload-label i {
+            font-size: 2rem;
+            color: var(--color-accent-yellow);
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header scrolled">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="Miguel Cordini Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='block';">
+                <span id="logo-fallback" style="display:none; font-family:'Outfit',sans-serif; font-weight:800; font-size:1.4rem; color:var(--color-primary);"><span style="color:var(--color-accent-yellow)">M</span>IGUEL <span style="color:var(--color-accent-yellow)">C</span>ORDINI</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="empresa.html" class="nav-link">Empresa</a></li>
+                    <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                    <li><a href="productos.html" class="nav-link">Productos</a></li>
+                    <li><a href="novedades.html" class="nav-link">Novedades</a></li>
+                    <li><a href="trabaja-con-nosotros.html" class="nav-link active">Trabajá con nosotros</a></li>
+                    <li><a href="contacto.html" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.85rem;">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="nav-toggle" aria-label="Abrir menú de navegación">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Inner Page Header -->
+    <section class="section" style="padding: 140px 0 60px; background: linear-gradient(135deg, rgba(39, 53, 22, 0.85), rgba(15, 17, 16, 0.95)), url('assets/agro_bg.png') no-repeat center center / cover; color:var(--text-light);">
+        <div class="container">
+            <h1 style="color: var(--text-light); font-family:'Outfit',sans-serif; font-weight: 800; margin-bottom: 12px;">Trabajá con nosotros</h1>
+            <p style="color: rgba(255,255,255,0.7); max-width:600px; font-size: 1.1rem;">Sumate a un equipo comercial y técnico enfocado en transformar la agricultura regional.</p>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="section">
+        <div class="container">
+            <div class="form-layout">
+                
+                <!-- Left: Application Form -->
+                <div>
+                    <div class="form-box">
+                        <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); font-size:1.6rem; margin-bottom: 24px;">Envianos tu Currículum</h2>
+                        
+                        <form id="career-form" onsubmit="submitCareerForm(event)">
+                            <div class="grid-2" style="gap: 20px; margin-bottom: 0;">
+                                <div class="form-group">
+                                    <label class="form-label" for="fullname">Nombre y Apellido *</label>
+                                    <input type="text" id="fullname" required class="form-control" placeholder="Ej. Juan Pérez">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Correo Electrónico *</label>
+                                    <input type="email" id="email" required class="form-control" placeholder="ejemplo@correo.com">
+                                </div>
+                            </div>
+
+                            <div class="grid-2" style="gap: 20px; margin-bottom: 0;">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Teléfono de Contacto *</label>
+                                    <input type="tel" id="phone" required class="form-control" placeholder="Ej. 2915034472">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="address">Dirección / Localidad *</label>
+                                    <input type="text" id="address" required class="form-control" placeholder="Ej. Bahía Blanca">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Adjuntar CV (PDF, DOC) *</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" id="cv-file" accept=".pdf,.doc,.docx" required>
+                                    <div class="file-upload-label">
+                                        <i class="fas fa-cloud-arrow-up"></i>
+                                        <span>Subir archivo CV (PDF/DOC)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="comments">Mensaje / Comentarios adicionales</label>
+                                <textarea id="comments" rows="4" class="form-control" placeholder="Contanos brevemente tu experiencia en el sector agropecuario..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--border-radius-sm);">Enviar Postulación <i class="fas fa-paper-plane"></i></button>
+                        </form>
+
+                        <!-- Success message box -->
+                        <div id="form-success-box" style="display:none; padding:24px; border-radius:var(--border-radius-sm); border:1px solid var(--color-accent-yellow); background-color:rgba(230, 185, 32, 0.05); margin-top:20px; text-align:center;">
+                            <i class="fas fa-circle-check" style="font-size:3rem; color:var(--color-accent-yellow); margin-bottom:12px;"></i>
+                            <h3 style="color:var(--color-primary-light); font-family:'Outfit',sans-serif; margin-bottom:8px;">¡Postulación Recibida!</h3>
+                            <p style="font-size:0.9rem; color:var(--text-dark); margin-bottom:0;">Gracias por postularte. Tu CV ha sido enviado a nuestro equipo comercial de Miguel Cordini. Nos pondremos en contacto contigo a la brevedad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Career Info -->
+                <aside style="display: flex; flex-direction: column; gap: 30px;">
+                    <div class="widget-box" style="background-color: var(--color-primary); color: var(--text-light);">
+                        <h3 style="font-family:'Outfit',sans-serif; color: var(--text-light); font-size:1.35rem; margin-bottom: 16px;">¿Por qué unirte a nosotros?</h3>
+                        <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">Miguel Cordini es sinónimo de cercanía y soluciones eficientes para el productor agropecuario de la provincia de Buenos Aires.</p>
+                        
+                        <ul style="list-style: none; font-size: 0.9rem; color: rgba(255,255,255,0.85); display:flex; flex-direction:column; gap:12px;">
+                            <li><i class="fas fa-check" style="color:var(--color-accent-yellow); margin-right: 8px;"></i> Respaldo de la firma nacional FACYT.</li>
+                            <li><i class="fas fa-check" style="color:var(--color-accent-yellow); margin-right: 8px;"></i> Capacitación técnica continua en AgTech.</li>
+                            <li><i class="fas fa-check" style="color:var(--color-accent-yellow); margin-right: 8px;"></i> Ambiente dinámico enfocado en el productor.</li>
+                            <li><i class="fas fa-check" style="color:var(--color-accent-yellow); margin-right: 8px;"></i> Oportunidades de crecimiento profesional.</li>
+                        </ul>
+                    </div>
+
+                    <div class="widget-box">
+                        <h3 style="font-family:'Outfit',sans-serif; color: var(--color-primary); font-size:1.2rem; margin-bottom: 16px;">Nuestros Perfiles de Búsqueda</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.5; margin-bottom: 16px;">Valoramos la formación técnica y comercial. Frecuentemente incorporamos:</p>
+                        
+                        <ul style="list-style: none; font-size: 0.9rem; color: var(--text-muted); display:flex; flex-direction:column; gap:10px;">
+                            <li><i class="fas fa-circle-chevron-right" style="color:var(--color-accent-blue); margin-right: 6px;"></i> Ingenieros Agrónomos (Asesoramiento)</li>
+                            <li><i class="fas fa-circle-chevron-right" style="color:var(--color-accent-blue); margin-right: 6px;"></i> Promotores Técnicos Comerciales (ATC)</li>
+                            <li><i class="fas fa-circle-chevron-right" style="color:var(--color-accent-blue); margin-right: 6px;"></i> Operarios de logística y entrega a campo</li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Col 1 -->
+                <div class="footer-brand">
+                    <span style="font-family:'Outfit',sans-serif; font-weight:800; font-size:1.8rem; color:var(--text-light); display:block; margin-bottom:12px;"><span style="color:var(--color-accent-yellow)">M</span>IGUEL <span style="color:var(--color-accent-yellow)">C</span>ORDINI</span>
+                    <p>Soluciones tecnológicas y nutricionales para optimizar el rendimiento del campo. Distribuidor oficial FACYT en el sudoeste bonaerense.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/macagronegocios" target="_blank" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/miguelcordini" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/AngelCordini" target="_blank" class="social-btn" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtube.com/mac_agronegocios" target="_blank" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="empresa.html">Empresa</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="novedades.html">Novedades</a></li>
+                        <li><a href="trabaja-con-nosotros.html">Trabajá con nosotros</a></li>
+                    </ul>
+                </div>
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="footer-title">Servicios Clave</h4>
+                    <ul class="footer-links">
+                        <li><a href="servicios.html">Control de Calidad de Agua</a></li>
+                        <li><a href="servicios.html">Monitoreo con Dron NDVI</a></li>
+                        <li><a href="servicios.html">Calibración de Equipos</a></li>
+                        <li><a href="servicios.html">Asesoramiento Técnico</a></li>
+                        <li><a href="servicios.html">Entrega directa en Campo</a></li>
+                    </ul>
+                </div>
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-location-dot"></i>
+                            <span>Bahía Blanca y Sudoeste de Buenos Aires, Argentina</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+54 291 503-4472</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>ventas@miguelcordini.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Miguel Cordini - Soluciones e Insumos Agropecuarios. Todos los derechos reservados.</p>
+                <p>Distribución Certificada FACYT</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript File -->
+    <script src="js/main.js"></script>
+    <script>
+        function submitCareerForm(event) {
+            event.preventDefault();
+            document.getElementById('career-form').style.display = 'none';
+            document.getElementById('form-success-box').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
