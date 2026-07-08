@@ -698,6 +698,43 @@ a {
     .hero-ctas {
         justify-content: center;
     }
-    
 
+
+}
+
+/* Blog post meta (author, date, comments) — shared by novedades.html cards and individual post pages */
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 24px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 14px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.article-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.article-meta i {
+    color: var(--color-accent-green);
+    font-size: 0.95rem;
+    width: 1em;
+    text-align: center;
+}
+
+.post-featured-img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 24px;
+    display: block;
+    background-color: var(--bg-light);
 }

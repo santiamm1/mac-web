@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6b903e"/>
+      <stop offset="1" stop-color="#273516"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#bg2)"/>
+  <g fill="#ffffff" opacity="0.06">
+    <circle cx="60" cy="80" r="4"/><circle cx="120" cy="140" r="4"/><circle cx="500" cy="90" r="4"/>
+    <circle cx="540" cy="480" r="4"/><circle cx="90" cy="520" r="4"/><circle cx="460" cy="540" r="4"/>
+  </g>
+  <!-- sprayer boom -->
+  <rect x="120" y="290" width="360" height="14" rx="7" fill="#f8f9fc" opacity="0.9"/>
+  <!-- nozzles -->
+  <g fill="#e6b920">
+    <circle cx="160" cy="297" r="10"/>
+    <circle cx="240" cy="297" r="10"/>
+    <circle cx="320" cy="297" r="10"/>
+    <circle cx="400" cy="297" r="10"/>
+    <circle cx="460" cy="297" r="10"/>
+  </g>
+  <!-- spray cones -->
+  <g fill="#f8f9fc" opacity="0.55">
+    <path d="M160 307 L145 350 L175 350 Z"/>
+    <path d="M240 307 L225 350 L255 350 Z"/>
+    <path d="M320 307 L305 350 L335 350 Z"/>
+    <path d="M400 307 L385 350 L415 350 Z"/>
+    <path d="M460 307 L445 350 L475 350 Z"/>
+  </g>
+  <!-- slider control (calibración) -->
+  <rect x="220" y="200" width="160" height="10" rx="5" fill="#f8f9fc" opacity="0.4"/>
+  <circle cx="330" cy="205" r="14" fill="#e6b920"/>
+  <text x="300" y="470" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#f8f9fc" text-anchor="middle" opacity="0.85">Calibración de Pulverizadoras</text>
+</svg>

@@ -43,21 +43,22 @@
         .article-detail-card {
             background-color: var(--bg-white);
             border-radius: var(--border-radius-md);
-            padding: 40px;
+            padding: 20px;
             box-shadow: var(--shadow-sm);
             border: 1px solid rgba(107, 144, 62, 0.05);
-            margin-bottom: 48px;
-            scroll-margin-top: 100px;
+            transition: var(--transition-normal);
         }
-        .article-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 16px;
+        .article-detail-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+        .post-thumb {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 16px;
+            background-color: var(--bg-light);
         }
     </style>
 </head>
@@ -106,9 +107,10 @@
                 <div class="posts-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:24px;">
                     <!-- Post 1 -->
                     <a href="novedades/jornada-produccion-horticola-bajo-cubierta.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0;">
+                        <img src="assets/horticultura_novedades.png" alt="Jornada sobre Producción Hortícola Bajo Cubierta" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-seedling"></i> Horticultura</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Jornada sobre Producción Hortícola Bajo Cubierta</h2>
-                        <div class="article-meta" style="border-bottom:none; padding-bottom:0; margin-bottom:12px;">
+                        <div class="article-meta" style="border:none; padding:0; margin-bottom:12px;">
                             <span><i class="far fa-calendar-alt"></i> 29 Jul, 2022</span>
                         </div>
                         <p style="color:var(--text-muted); font-size:0.9rem;">Resumen de la jornada técnica sobre esquemas sanitarios y nutricionales biológicos bajo cubierta.</p>
@@ -116,9 +118,10 @@
 
                     <!-- Post 2 -->
                     <a href="novedades/informe-mercado-granos-soja-maiz-trigo.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0;">
+                        <img src="assets/hero_bg.png" alt="Informe de Mercado de Granos: Soja, Maíz y Trigo" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-chart-line"></i> Mercado de Granos</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Informe de Mercado de Granos: Soja, Maíz y Trigo</h2>
-                        <div class="article-meta" style="border-bottom:none; padding-bottom:0; margin-bottom:12px;">
+                        <div class="article-meta" style="border:none; padding:0; margin-bottom:12px;">
                             <span><i class="far fa-calendar-alt"></i> 15 Jul, 2022</span>
                         </div>
                         <p style="color:var(--text-muted); font-size:0.9rem;">Análisis mensual del mercado internacional de granos según USDA y Bolsa de Chicago.</p>
@@ -126,9 +129,10 @@
 
                     <!-- Post 3 -->
                     <a href="novedades/manejo-nutricional-trigo.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0;">
+                        <img src="assets/agricultura_extensiva.png" alt="Trigo: Claves del Manejo Nutricional" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-flask"></i> Nutrición de Cultivos</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Trigo: Claves del Manejo Nutricional</h2>
-                        <div class="article-meta" style="border-bottom:none; padding-bottom:0; margin-bottom:12px;">
+                        <div class="article-meta" style="border:none; padding:0; margin-bottom:12px;">
                             <span><i class="far fa-calendar-alt"></i> 3 Jul, 2022</span>
                         </div>
                         <p style="color:var(--text-muted); font-size:0.9rem;">Nitrógeno, fósforo, azufre y zinc en las primeras etapas de macollaje.</p>
@@ -136,9 +140,10 @@
 
                     <!-- Post 4 -->
                     <a href="novedades/boletin-mac-info-junio.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0;">
+                        <img src="assets/campo_argentino.png" alt="Boletín Informativo MAC Info - Junio" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-book-open"></i> Boletín Mensual</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Boletín Informativo MAC Info - Junio</h2>
-                        <div class="article-meta" style="border-bottom:none; padding-bottom:0; margin-bottom:12px;">
+                        <div class="article-meta" style="border:none; padding:0; margin-bottom:12px;">
                             <span><i class="far fa-calendar-alt"></i> 1 Jun, 2022</span>
                         </div>
                         <p style="color:var(--text-muted); font-size:0.9rem;">Barbecho químico de invierno, orden de mezclado de herbicidas y coadyuvantes para aguas duras.</p>
@@ -146,6 +151,7 @@
 
                     <!-- Post 5 (pendiente) -->
                     <a href="novedades/correccion-dureza-alcalinidad-agua.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0; opacity:0.75;">
+                        <img src="assets/analisis_agua_campo.png" alt="Corrección de Dureza y Alcalinidad del Agua" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-droplet"></i> Nutrición de Cultivos</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Corrección de Dureza y Alcalinidad del Agua</h2>
                         <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fas fa-circle-info"></i> Contenido en preparación.</p>
@@ -153,6 +159,7 @@
 
                     <!-- Post 6 (pendiente) -->
                     <a href="novedades/cuando-usar-coadyuvantes.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0; opacity:0.75;">
+                        <img src="assets/novedades/cuando-usar-coadyuvantes.svg" alt="Cuándo Usar Coadyuvantes en la Pulverización" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-flask"></i> Nutrición de Cultivos</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Cuándo Usar Coadyuvantes en la Pulverización</h2>
                         <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fas fa-circle-info"></i> Contenido en preparación.</p>
@@ -160,6 +167,7 @@
 
                     <!-- Post 7 (pendiente) -->
                     <a href="novedades/guia-calibracion-pulverizadoras.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0; opacity:0.75;">
+                        <img src="assets/novedades/guia-calibracion-pulverizadoras.svg" alt="Guía de Calibración de Pulverizadoras" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-sliders"></i> Boletín Mensual</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Guía de Calibración de Pulverizadoras</h2>
                         <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fas fa-circle-info"></i> Contenido en preparación.</p>
@@ -167,6 +175,7 @@
 
                     <!-- Post 8 (pendiente) -->
                     <a href="novedades/monitoreo-ndvi-dron.html" class="article-detail-card" style="display:block; text-decoration:none; color:inherit; margin-bottom:0; opacity:0.75;">
+                        <img src="assets/drone.png" alt="Monitoreo NDVI con Dron: Cómo Funciona" class="post-thumb">
                         <div style="font-size: 0.8rem; font-weight: 700; color:var(--color-accent-yellow); text-transform: uppercase; margin-bottom: 12px;"><i class="fas fa-satellite"></i> Boletín Mensual</div>
                         <h2 style="font-family:'Outfit',sans-serif; color:var(--text-dark); margin-bottom:16px; font-size:1.2rem;">Monitoreo NDVI con Dron: Cómo Funciona</h2>
                         <p style="color:var(--text-muted); font-size:0.9rem;"><i class="fas fa-circle-info"></i> Contenido en preparación.</p>
@@ -225,7 +234,7 @@
                             </div>
                         </div>
                         <div class="recent-post-item">
-                            <img src="assets/drone.png" alt="Miniatura">
+                            <img src="assets/agricultura_extensiva.png" alt="Miniatura">
                             <div>
                                 <a href="novedades/manejo-nutricional-trigo.html" style="font-size: 0.85rem; font-weight:700; color:var(--text-dark); line-height: 1.25; display:block;">Nutrición de Trigo Claves</a>
                                 <span style="font-size: 0.75rem; color: var(--text-muted);">03 Jul, 2022</span>
