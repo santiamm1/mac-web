@@ -346,13 +346,21 @@
 
                     <!-- Filter Tree -->
                     <ul class="filter-tree">
+                        <!-- Productos MAC (categoría madre) -->
+                        <li class="filter-item">
+                            <label>
+                                <input type="checkbox" class="category-checkbox" data-target="mac">
+                                Productos MAC
+                            </label>
+
+                            <ul class="filter-sublist">
                         <!-- Agricultura Intensiva -->
                         <li class="filter-item">
                             <label>
-                                <input type="checkbox" class="category-checkbox" data-target="intensiva">
+                                <input type="checkbox" class="category-checkbox" data-parent="mac" data-target="intensiva">
                                 Agricultura intensiva
                             </label>
-                            
+
                             <ul class="filter-sublist">
                                 <!-- Auxiliares de pulverización -->
                                 <li class="filter-item">
@@ -360,7 +368,7 @@
                                         <input type="checkbox" class="category-checkbox" data-parent="intensiva" data-target="auxiliares">
                                         Auxiliares de pulverización
                                     </label>
-                                    
+
                                     <ul class="filter-sublist" style="padding-left: 15px;">
                                         <li>
                                             <label>
@@ -388,7 +396,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
+
                                 <!-- Biológicos -->
                                 <li class="filter-item">
                                     <label>
@@ -423,12 +431,123 @@
                             </ul>
                         </li>
 
-                        <!-- Productos MAC -->
+                        <!-- Agricultura Extensiva -->
                         <li class="filter-item" style="margin-top: 20px;">
                             <label>
-                                <input type="checkbox" class="category-checkbox" data-target="mac">
-                                Productos MAC
+                                <input type="checkbox" class="category-checkbox" data-parent="mac" data-target="extensiva">
+                                Agricultura extensiva
                             </label>
+
+                            <ul class="filter-sublist">
+                                <!-- Coadyuvantes -->
+                                <li class="filter-item">
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-parent="extensiva" data-target="coadyuvantes">
+                                        Coadyuvantes
+                                    </label>
+
+                                    <ul class="filter-sublist" style="padding-left: 15px;">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="coadyuvantes" data-target="alta-gama-ext">
+                                                Línea Alta Gama
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="coadyuvantes" data-target="convencional-ext">
+                                                Línea convencional
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="coadyuvantes" data-target="espacial-ext">
+                                                Línea Espacial
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="coadyuvantes" data-target="max-ext">
+                                                Línea Max
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Fertilizantes -->
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-parent="extensiva" data-target="fertilizantes-ext">
+                                        Fertilizantes
+                                    </label>
+                                </li>
+
+                                <!-- Inoculantes -->
+                                <li class="filter-item">
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-parent="extensiva" data-target="inoculantes">
+                                        Inoculantes
+                                    </label>
+                                    <ul class="filter-sublist" style="padding-left: 15px;">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="inoculantes" data-target="multicultivo-ext">
+                                                Línea multicultivo
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="inoculantes" data-target="soja">
+                                                Línea soja
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="inoculantes" data-target="trigo">
+                                                Línea Trigo
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Otros productos -->
+                                <li>
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-parent="extensiva" data-target="otros-ext">
+                                        Otros productos
+                                    </label>
+                                </li>
+
+                                <!-- Sanidad vegetal -->
+                                <li class="filter-item">
+                                    <label>
+                                        <input type="checkbox" class="category-checkbox" data-parent="extensiva" data-target="sanidad">
+                                        Sanidad vegetal
+                                    </label>
+                                    <ul class="filter-sublist" style="padding-left: 15px;">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="sanidad" data-target="fungicidas">
+                                                Fungicidas
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="sanidad" data-target="herbicidas">
+                                                Herbicidas
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" class="category-checkbox" data-parent="sanidad" data-target="insecticidas">
+                                                Insecticidas
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                            </ul>
                         </li>
                     </ul>
                 </aside>
@@ -444,198 +563,272 @@
 
                     <!-- Products Grid -->
                     <div class="products-grid" id="products-grid">
-                        <!-- Product 1 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="alta-gama" data-keywords="corrector doble efecto facyt agua ph dureza">
-                            <div class="product-img-wrapper">
-                                <img src="assets/corrector_doble_efecto.png" alt="Corrector doble efecto Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-filter"></i>
+                        <div class="product-card" data-category="intensiva" data-keywords="corrector doble efecto facyt agua ph dureza">
+                            <a href="productos/corrector-doble-efecto-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/corrector-doble-efecto-facyt.jpg" alt="Corrector Doble Efecto Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-filter"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Corrector doble efecto Facyt</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Corrector%20doble%20efecto%20Facyt" target="_blank" class="product-action">
+                                <h3 class="product-name">Corrector Doble Efecto Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Corrector%20Doble%20Efecto%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 2 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="convencional" data-keywords="corrector de ph facyt agua acido alcalino">
-                            <div class="product-img-wrapper">
-                                <img src="assets/corrector_ph.png" alt="Corrector de pH Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-flask"></i>
+                        <div class="product-card" data-category="intensiva" data-keywords="corrector de ph facyt agua acido alcalino">
+                            <a href="productos/corrector-de-ph-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/corrector-de-ph-facyt.jpg" alt="Corrector de pH Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Corrector de pH Facyt</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Corrector%20de%20pH%20Facyt" target="_blank" class="product-action">
+                                <h3 class="product-name">Corrector de pH Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Corrector%20de%20pH%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 3 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="max" data-keywords="limpiador desengrasante facyt ld petron pulverizadora tanque">
-                            <div class="product-img-wrapper">
-                                <img src="assets/limpiador_ld_petron.png" alt="Limpiador Desengrasante Facyt LD Petron" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-soap"></i>
+                        <div class="product-card" data-category="intensiva extensiva" data-subcategory="auxiliares coadyuvantes" data-line="max max-ext" data-keywords="limpiador desengrasante facyt ld petron pulverizadora tanque">
+                            <a href="productos/limpiador-desengrasante-facyt-ld-petron.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/limpiador-ld-petron.jpg" alt="Limpiador Desengrasante Facyt LD Petron" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-soap"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Limpiador Desengrasante Facyt LD Petron</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Limpiador%20Desengrasante%20Facyt%20LD%20Petron" target="_blank" class="product-action">
+                                <h3 class="product-name">Limpiador Desengrasante Facyt LD Petron</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Limpiador%20Desengrasante%20Facyt%20LD%20Petron" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 4 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="espacial" data-keywords="coadyuvante sulfacyt fertilizante amonio">
-                            <div class="product-img-wrapper">
-                                <img src="assets/coadyuvante_sulfacyt.png" alt="Coadyuvante SULFACYT" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-droplet"></i>
+                        <div class="product-card" data-category="intensiva extensiva" data-subcategory="auxiliares coadyuvantes" data-line="espacial espacial-ext" data-keywords="coadyuvante sulfacyt fertilizante amonio">
+                            <a href="productos/coadyuvante-sulfacyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/coadyuvante-sulfacyt.jpg" alt="Coadyuvante SULFACYT" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-droplet"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Coadyuvante SULFACYT</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Coadyuvante%20SULFACYT" target="_blank" class="product-action">
+                                <h3 class="product-name">Coadyuvante SULFACYT</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Coadyuvante%20SULFACYT" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 5 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="convencional" data-keywords="coadyuvante facyt ecomax aceite vegetal metilado">
-                            <div class="product-img-wrapper">
-                                <img src="assets/coadyuvante_ecomax.png" alt="Coadyuvante Facyt Ecomax" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-droplet"></i>
+                        <div class="product-card" data-category="intensiva extensiva" data-subcategory="auxiliares coadyuvantes" data-line="convencional convencional-ext" data-keywords="coadyuvante facyt ecomax aceite vegetal metilado">
+                            <a href="productos/coadyuvante-facyt-ecomax.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/coadyuvante-ecomax.jpg" alt="Coadyuvante Facyt Ecomax" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-droplet"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Coadyuvante Facyt Ecomax</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Coadyuvante%20Facyt%20Ecomax" target="_blank" class="product-action">
+                                <h3 class="product-name">Coadyuvante Facyt Ecomax</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Coadyuvante%20Facyt%20Ecomax" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 6 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="alta-gama" data-keywords="secuestrante hl 2000 facyt cationes sales dureza">
-                            <div class="product-img-wrapper">
-                                <img src="assets/secuestrante_hl_2000.png" alt="Secuestrante HL 2000 Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-shield-virus"></i>
+                        <div class="product-card" data-category="intensiva extensiva" data-subcategory="auxiliares coadyuvantes" data-line="alta-gama alta-gama-ext" data-keywords="secuestrante hl 2000 facyt cationes sales dureza">
+                            <a href="productos/secuestrante-hl-2000-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/secuestrante-hl-2000.jpg" alt="Secuestrante HL 2000 Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-shield-virus"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Secuestrante HL 2000 Facyt</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Secuestrante%20HL%202000%20Facyt" target="_blank" class="product-action">
+                                <h3 class="product-name">Secuestrante HL 2000 Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Secuestrante%20HL%202000%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 7 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="espacial" data-keywords="coadyuvante antideriva facyt gota viento deriva">
-                            <div class="product-img-wrapper">
-                                <img src="assets/coadyuvante_antideriva.png" alt="Coadyuvante Antideriva Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-wind"></i>
+                        <div class="product-card" data-category="intensiva extensiva" data-subcategory="auxiliares coadyuvantes" data-line="espacial espacial-ext" data-keywords="coadyuvante antideriva facyt gota viento deriva">
+                            <a href="productos/coadyuvante-antideriva-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/coadyuvante-antideriva.jpg" alt="Coadyuvante Antideriva Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-wind"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Coadyuvante Antideriva Facyt</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Coadyuvante%20Antideriva%20Facyt" target="_blank" class="product-action">
+                                <h3 class="product-name">Coadyuvante Antideriva Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Coadyuvante%20Antideriva%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 8 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="auxiliares" data-line="convencional" data-keywords="siliconado facyt coadyuvante tension superficial">
-                            <div class="product-img-wrapper">
-                                <img src="assets/siliconado_facyt.png" alt="Siliconado Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-bezier-curve"></i>
+                        <div class="product-card" data-category="intensiva extensiva" data-subcategory="auxiliares coadyuvantes" data-line="convencional convencional-ext" data-keywords="siliconado facyt coadyuvante tension superficial">
+                            <a href="productos/siliconado-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/siliconado-facyt.jpg" alt="Siliconado Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-bezier-curve"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Siliconado Facyt</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Siliconado%20Facyt" target="_blank" class="product-action">
+                                <h3 class="product-name">Siliconado Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Siliconado%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 9 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="biologicos" data-line="multicultivo" data-keywords="inoculante multicultivo facyt bacterias leguminosas nitrogeno">
-                            <div class="product-img-wrapper">
-                                <img src="assets/inoculante_multicultivo.png" alt="Inoculante Multicultivo Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-dna"></i>
+                        <div class="product-card" data-category="intensiva" data-keywords="todo terreno espacial facyt coadyuvante glifosato">
+                            <a href="productos/todo-terreno-espacial-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/todo-terreno-espacial.jpg" alt="Todo Terreno Espacial Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Inoculante Multicultivo Facyt</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Inoculante%20Multicultivo%20Facyt" target="_blank" class="product-action">
+                                <h3 class="product-name">Todo Terreno Espacial Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Todo%20Terreno%20Espacial%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 10 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="fertilizantes" data-keywords="facyt foliar microelementos zinc boro manganeso nutricion">
-                            <div class="product-img-wrapper">
-                                <img src="assets/foliar_microelementos.png" alt="Facyt Foliar Microelementos" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-seedling"></i>
+                        <div class="product-card" data-category="intensiva" data-keywords="fertilizante motivador co mo facyt cobalto molibdeno soja fijacion nitrogeno">
+                            <a href="productos/fertilizante-motivador-co-mo-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/fertilizante-motivador-co-mo.jpg" alt="Fertilizante Motivador CO + MO Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Facyt Foliar Microelementos</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Facyt%20Foliar%20Microelementos" target="_blank" class="product-action">
+                                <h3 class="product-name">Fertilizante Motivador CO + MO Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Fertilizante%20Motivador%20CO%20%2B%20MO%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 11 -->
-                        <div class="product-card" data-category="intensiva" data-subcategory="biologicos" data-keywords="inoculante organico radicular micorrizas raiz crecimiento">
-                            <div class="product-img-wrapper">
-                                <img src="assets/inoculante_radicular.png" alt="Inoculante Orgánico Radicular" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-leaf"></i>
+                        <div class="product-card" data-category="intensiva" data-keywords="fertilizante motivador zinc facyt azufre maiz alfalfa trigo">
+                            <a href="productos/fertilizante-motivador-zinc-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/fertilizante-motivador-zinc.jpg" alt="Fertilizante Motivador Zinc Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Inoculante Orgánico Radicular</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Inoculante%20Organico%20Radicular" target="_blank" class="product-action">
+                                <h3 class="product-name">Fertilizante Motivador Zinc Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Fertilizante%20Motivador%20Zinc%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 12 -->
-                        <div class="product-card" data-category="mac" data-keywords="herbicida crucial 2.4d malezas hoja ancha barbecho">
-                            <div class="product-img-wrapper">
-                                <img src="assets/herbicida_crucial.png" alt="Herbicida Crucial 2.4D" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-spray-can-sparkles"></i>
+                        <div class="product-card" data-category="intensiva" data-keywords="fertilizante arranque zinc facyt semilla inoculantes clorofila">
+                            <a href="productos/fertilizante-arranque-zinc-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/fertilizante-arranque-zinc.jpg" alt="Fertilizante Arranque Zinc Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Herbicida Crucial 2.4D</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Herbicida%20Crucial%202.4D" target="_blank" class="product-action">
+                                <h3 class="product-name">Fertilizante Arranque Zinc Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Fertilizante%20Arranque%20Zinc%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 13 -->
-                        <div class="product-card" data-category="mac" data-keywords="fungicida facyt max estrobirulina triazol trigo cebada soja">
-                            <div class="product-img-wrapper">
-                                <img src="assets/fungicida_max.png" alt="Fungicida FACYT MAX" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-shield-halved"></i>
+                        <div class="product-card" data-category="extensiva" data-subcategory="sanidad" data-line="herbicidas" data-keywords="herbicida crucial 2.4d malezas hoja ancha barbecho">
+                            <a href="productos/herbicida-facyt-crucial-24d.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/no-image.jpg" alt="Herbicida Facyt Crucial 2,4D" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-spray-can-sparkles"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Fungicida FACYT MAX</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Fungicida%20FACYT%20MAX" target="_blank" class="product-action">
+                                <h3 class="product-name">Herbicida Facyt Crucial 2,4D</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Herbicida%20Facyt%20Crucial%202%2C4D" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
 
-                        <!-- Product 14 -->
-                        <div class="product-card" data-category="mac" data-keywords="insecticida facyt trion orugas chinches soja maiz">
-                            <div class="product-img-wrapper">
-                                <img src="assets/insecticida_trion.png" alt="Insecticida Facyt Trion" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                <div class="product-img-fallback" style="display:flex; align-items:center; justify-content:center; height:100%; width:100%;">
-                                    <i class="fas fa-bug-slash"></i>
+                        <div class="product-card" data-category="extensiva" data-subcategory="coadyuvantes" data-line="max-ext" data-keywords="limpiahusillos hd facyt desengrasante cosechadora algodon husillos">
+                            <a href="productos/limpiahusillos-hd-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/limpiahusillos-hd.jpg" alt="Limpiahusillos HD Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-soap"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="product-name">Insecticida Facyt Trion</h3>
-                            <a href="https://wa.me/542915034472?text=Hola,%20quisiera%20consultar%20por%20el%20Insecticida%20Facyt%20Trion" target="_blank" class="product-action">
+                                <h3 class="product-name">Limpiahusillos HD Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Limpiahusillos%20HD%20Facyt" target="_blank" class="product-action">
+                                Consultar Producto <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <div class="product-card" data-category="extensiva" data-subcategory="coadyuvantes" data-line="max-ext" data-keywords="limpiador desengrasante industrial facyt sanitarios pisos tanque pulverizadora">
+                            <a href="productos/limpiador-desengrasante-industrial-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/limpiador-desengrasante-industrial.jpg" alt="Limpiador Desengrasante Industrial Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-pump-soap"></i>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Limpiador Desengrasante Industrial Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Limpiador%20Desengrasante%20Industrial%20Facyt" target="_blank" class="product-action">
+                                Consultar Producto <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <div class="product-card" data-category="extensiva" data-subcategory="otros-ext" data-keywords="controlador de espuma facyt antiespumante tanque caldo">
+                            <a href="productos/controlador-de-espuma-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/controlador-espuma.jpg" alt="Controlador de Espuma Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Controlador de Espuma Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Controlador%20de%20Espuma%20Facyt" target="_blank" class="product-action">
+                                Consultar Producto <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <div class="product-card" data-category="extensiva" data-subcategory="coadyuvantes" data-line="convencional-ext" data-keywords="coadyuvante facyt adherencia mojado agroquimicos">
+                            <a href="productos/coadyuvante-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/coadyuvante-facyt.jpg" alt="Coadyuvante Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-droplet"></i>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Coadyuvante Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Coadyuvante%20Facyt" target="_blank" class="product-action">
+                                Consultar Producto <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <div class="product-card" data-category="extensiva" data-subcategory="coadyuvantes" data-line="alta-gama-ext" data-keywords="efecto combinado facyt secuestrante dureza calcio magnesio herbicida">
+                            <a href="productos/efecto-combinado-facyt.html" style="text-decoration:none; color:inherit;">
+                                <div class="product-img-wrapper">
+                                    <img src="assets/productos/efecto-combinado.jpg" alt="Efecto Combinado Facyt" class="product-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                    <div class="product-img-fallback" style="display:none; align-items:center; justify-content:center; height:100%; width:100%;">
+                                        <i class="fas fa-flask"></i>
+                                    </div>
+                                </div>
+                                <h3 class="product-name">Efecto Combinado Facyt</h3>
+                            </a>
+                            <a href="https://wa.me/542915034472?text=Hola%2C%20quisiera%20consultar%20por%20el%20Efecto%20Combinado%20Facyt" target="_blank" class="product-action">
                                 Consultar Producto <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
@@ -652,7 +845,8 @@
             <div class="footer-grid">
                 <!-- Col 1 -->
                 <div class="footer-brand">
-                    <span style="font-family:'Outfit',sans-serif; font-weight:800; font-size:1.8rem; color:var(--text-light); display:block; margin-bottom:12px;"><span style="color:var(--color-accent-yellow)">M</span>IGUEL <span style="color:var(--color-accent-yellow)">C</span>ORDINI</span>
+                    <img src="assets/logo.png" alt="Miguel Cordini Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='block';">
+                    <span id="footer-logo-fallback" style="display:none; font-family:'Outfit',sans-serif; font-weight:800; font-size:1.8rem; color:var(--text-light);"><span style="color:var(--color-accent-yellow)">M</span>IGUEL <span style="color:var(--color-accent-yellow)">C</span>ORDINI</span>
                     <p>Soluciones tecnológicas y nutricionales para optimizar el rendimiento del campo. Distribuidor oficial FACYT en el sudoeste bonaerense.</p>
                     <div class="social-links">
                         <a href="https://facebook.com/macagronegocios" target="_blank" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -739,9 +933,9 @@
                 let visibleCount = 0;
 
                 products.forEach(product => {
-                    const category = product.getAttribute('data-category');
-                    const subcategory = product.getAttribute('data-subcategory');
-                    const line = product.getAttribute('data-line');
+                    const categories = (product.getAttribute('data-category') || '').split(' ');
+                    const subcategories = (product.getAttribute('data-subcategory') || '').split(' ');
+                    const lines = (product.getAttribute('data-line') || '').split(' ');
                     const keywords = product.getAttribute('data-keywords') || '';
                     const name = product.querySelector('.product-name').textContent.toLowerCase();
 
@@ -753,9 +947,9 @@
                     if (checkedTargets.length === 0) {
                         matchesCategory = true; // No filters selected, show all
                     } else {
-                        matchesCategory = checkedTargets.includes(category) || 
-                                          checkedTargets.includes(subcategory) || 
-                                          checkedTargets.includes(line);
+                        matchesCategory = checkedTargets.some(t => categories.includes(t)) ||
+                                          checkedTargets.some(t => subcategories.includes(t)) ||
+                                          checkedTargets.some(t => lines.includes(t));
                     }
 
                     if (matchesSearch && matchesCategory) {
@@ -782,24 +976,30 @@
                     }
                 }
 
-                // Update title and breadcrumbs based on selected filters
-                updateCategoryHeader(checkedTargets);
+                // Update title and breadcrumbs based on the highest-level checked filter(s)
+                updateCategoryHeader();
             }
 
-            function updateCategoryHeader(checkedTargets) {
-                if (checkedTargets.length === 0) {
+            function updateCategoryHeader() {
+                // "Active" filters are checked boxes whose parent isn't also checked
+                // (cascading down from a parent shouldn't count as a separate active filter)
+                const activeCbs = Array.from(checkboxes).filter(cb => {
+                    if (!cb.checked) return false;
+                    const parentTarget = cb.getAttribute('data-parent');
+                    const parentCb = parentTarget && document.querySelector(`.category-checkbox[data-target="${parentTarget}"]`);
+                    return !(parentCb && parentCb.checked);
+                });
+
+                if (activeCbs.length === 0) {
                     categoryTitle.textContent = "Todos los Productos";
                     breadcrumbCat.textContent = "";
                     breadcrumbSep.style.display = "none";
                 } else {
-                    if (checkedTargets.length === 1) {
-                        const activeCb = document.querySelector(`.category-checkbox[data-target="${checkedTargets[0]}"]`);
-                        if (activeCb) {
-                            const labelText = activeCb.parentElement.textContent.trim();
-                            categoryTitle.textContent = labelText;
-                            breadcrumbCat.textContent = labelText;
-                            breadcrumbSep.style.display = "inline";
-                        }
+                    if (activeCbs.length === 1) {
+                        const labelText = activeCbs[0].parentElement.textContent.trim();
+                        categoryTitle.textContent = labelText;
+                        breadcrumbCat.textContent = labelText;
+                        breadcrumbSep.style.display = "inline";
                     } else {
                         categoryTitle.textContent = "Productos Filtrados";
                         breadcrumbCat.textContent = "Filtros activos";
@@ -808,22 +1008,17 @@
                 }
             }
 
-            // Auto-check parent/child relationships
+            // Auto-check parent/child relationships (fully recursive, tree can be N levels deep)
+            function setDescendantsChecked(target, isChecked) {
+                document.querySelectorAll(`.category-checkbox[data-parent="${target}"]`).forEach(desc => {
+                    desc.checked = isChecked;
+                    setDescendantsChecked(desc.getAttribute('data-target'), isChecked);
+                });
+            }
+
             checkboxes.forEach(cb => {
-                cb.addEventListener('change', (e) => {
-                    const target = cb.getAttribute('data-target');
-                    const isChecked = cb.checked;
-
-                    // If parent is checked/unchecked, check/uncheck all descendants in the DOM
-                    const descendants = document.querySelectorAll(`.category-checkbox[data-parent="${target}"]`);
-                    descendants.forEach(desc => {
-                        desc.checked = isChecked;
-                        // Trigger change recursively for grandchildren
-                        const grandTarget = desc.getAttribute('data-target');
-                        const grandDescendants = document.querySelectorAll(`.category-checkbox[data-parent="${grandTarget}"]`);
-                        grandDescendants.forEach(gd => gd.checked = isChecked);
-                    });
-
+                cb.addEventListener('change', () => {
+                    setDescendantsChecked(cb.getAttribute('data-target'), cb.checked);
                     filterProducts();
                 });
             });
@@ -836,11 +1031,7 @@
             const tabParam = urlParams.get('tab');
             
             if (tabParam) {
-                let targetParam = tabParam;
-                if (tabParam === 'extensiva') {
-                    targetParam = 'mac'; // map old tab name to new checkbox target
-                }
-                const targetCheckbox = document.querySelector(`.category-checkbox[data-target="${targetParam}"]`);
+                const targetCheckbox = document.querySelector(`.category-checkbox[data-target="${tabParam}"]`);
                 if (targetCheckbox) {
                     targetCheckbox.checked = true;
                     // Trigger change manually to check children and filter
